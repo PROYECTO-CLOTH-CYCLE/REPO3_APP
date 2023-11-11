@@ -1,0 +1,306 @@
+<!-- login.component.html -->
+<style>
+  :root{
+      --button:#8CB560;
+    --primary-color: #3a3939;
+    --background-color: #ffffff;
+    --dark-color: #f4ecec;
+  }
+  
+  html {
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* ********************************** */
+  /*             UTILIDADES             */
+  /* ********************************** */
+  .container {
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+  
+  .heading-1 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 3rem;
+  }
+  
+  /* ********************************** */
+  /*               HEADER               */
+  /* ********************************** */
+  .container-hero {
+    background-color: var(--background-color);
+  }
+  
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+  }
+  
+  .customer-support {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .customer-support i {
+    font-size: 3.3rem;
+  }
+  
+  .content-customer-support {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .container-logo i {
+    font-size: 3rem;
+  }
+  
+  .container-logo h1 a {
+    text-decoration: none;
+    color: #000;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+  }
+  
+  .container-user {
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+  }
+  
+  .container-user .fa-user {
+    font-size: 3rem;
+    color: var(--primary-color);
+    padding-right: 2.5rem;
+    border-right: 1px solid #e2e2e2;
+  }
+  
+  .container-user .fa-basket-shopping {
+    font-size: 3rem;
+    color: var(--primary-color);
+    padding-left: 1rem;
+  }
+  
+  .content-shopping-cart {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* ************* NAVBAR ************* */
+  .container-navbar {
+    background-color: #3a3939;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
+  
+  .navbar .fa-bars {
+    display: none;
+  }
+  
+  .menu {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .menu li {
+    list-style: none;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: var(--dark-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+  }
+  
+  .menu a::after {
+    content: '';
+    width: 1.5rem;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .menu a:hover::after {
+    opacity: 1;
+  }
+  
+  .menu a:hover {
+    color: #fff;
+  }
+  
+  
+  .user-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .user-buttons a {
+    border: 2px solid var(--primary-color);
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    text-decoration: none;
+  }
+  
+  .user-buttons a:hover {
+    opacity: 0.8;
+    border-color: #fff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+  }
+  
+ 
+  /* ********************************** */
+  /*            MAIN CONTENT            */
+  /* ********************************** */
+  .main-content {
+    background-color: var(--background-color);
+  }
+  
+  
+  /* ********************************** */
+  /*              INCIAR SESSION            */
+  /* ********************************** */
+  
+  .container2 {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 30px;
+    }
+    h2 {
+      color: #333333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .form-group {
+      margin-bottom: 10px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 3px;
+      border: 1px solid #cccccc;
+    }
+    
+    button {
+      display: block;
+      width: 100%;
+      background-color: #959995;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+<header>
+    <div class="container-hero">
+      <div class="container hero">
+        <div class="customer-support">
+          <i class="fa-solid fa-headset"></i>
+          <div class="content-customer-support">
+            <span class="text">Soporte al cliente</span>
+            <span class="number">933-689-949</span>
+          </div>
+        </div>
+  
+        <div class="container-logo">
+          <h1 class="logo"><img src="assets/CLOCHCYCLE.gif" width="100" height="100"><a href="/"></a></h1>
+        </div>
+  
+        <div class="container-user">
+          <i class="fa-solid fa-user"></i>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container-navbar">
+      <nav class="navbar container">
+        <i class="fa-solid fa-bars"></i>
+        <ul class="menu"></ul>
+  
+        <div class="user-buttons">
+          <a routerLink="/login" class="btn-login">Iniciar sesión</a>
+          <a routerLink="/registrarse" class="btn-register">Registrarse</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="container2">
+    <h2>Iniciar sesión</h2>
+  
+    <form action="/login" method="post">
+      <div class="form-group">
+        <label for="username">Nombre de usuario:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+  
+      <button type="submit" routerLink="/InicioCuenta">Iniciar sesión</button>
+  
+      <li><a routerLink="/registrarse">Registrarse</a></li>
+    </form>
+  </div>
+  
+  <footer class="footer">
+    <div class="container container-footer">
+      <div class="copyright">
+        <p>
+          Desarrollado por el Grupo6 para el mundo &copy; 2023
+        </p>
+      </div>
+    </div>
+  </footer>
+  
